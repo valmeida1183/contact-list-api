@@ -38,6 +38,7 @@ public static class AppConfigurationExtension
     public static void ConfigureServices(this WebApplicationBuilder builder)
     {
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+        Console.WriteLine(connectionString);
 
         builder.Services.AddDbContext<AppDbContext>(options =>
             {

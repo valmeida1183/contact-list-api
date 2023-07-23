@@ -15,8 +15,11 @@ namespace ContactListApi.Data
 
         public AppDbContext()
         {
-            var folder = System.IO.Directory.GetCurrentDirectory();
-            DbPath = System.IO.Path.Join(folder, @"Data\contactListApi.db");
+            // var folder = System.IO.Directory.GetCurrentDirectory();
+            // DbPath = System.IO.Path.Join(folder, @"Data\contactListApi.db");
+
+            // var folder = System.IO.Directory.GetCurrentDirectory();
+            DbPath = @"Data\contactListApi.db";
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

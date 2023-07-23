@@ -42,7 +42,7 @@ public static class AppConfigurationExtension
 
         builder.Services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseSqlite(connectionString);
+                options.UseSqlServer(connectionString);
             });
     }
 }

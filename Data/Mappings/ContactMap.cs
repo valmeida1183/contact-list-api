@@ -13,23 +13,23 @@ namespace ContactListApi.Data.Mappings
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id)
-                .HasColumnName("Id")
-                .HasColumnType("TEXT");
+                .HasColumnName("Id");
 
             builder.Property(x => x.Value)
                .IsRequired()
                .HasColumnName("Value")
-               .HasColumnType("TEXT");
+               .HasColumnType("NVARCHAR")
+               .HasMaxLength(50);
 
             builder.Property(x => x.PersonId)
                 .IsRequired()
-                .HasColumnName("PersonId")
-                .HasColumnType("TEXT");
+                .HasColumnName("PersonId");
+
 
             builder.Property(x => x.ContactTypeId)
                 .IsRequired()
                 .HasColumnName("ContactTypeId")
-                .HasColumnType("INTEGER");
+                .HasColumnType("INT");
 
             builder.HasOne(x => x.Person)
                 .WithMany(x => x.Contacts)

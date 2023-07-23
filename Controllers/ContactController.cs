@@ -4,7 +4,6 @@ using ContactListApi.Extensions;
 using ContactListApi.Models;
 using ContactListApi.ViewModels;
 using ContactListApi.ViewModels.Contact;
-using ContactListApi.ViewModels.Contact.Intefaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

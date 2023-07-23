@@ -13,12 +13,12 @@ namespace ContactListApi.Data.Mappings
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id)
-                .HasColumnType("INTEGER");
+                .HasColumnType("INT");
 
             builder.Property(x => x.Name)
                 .IsRequired()
                 .HasColumnName("Name")
-                .HasColumnType("TEXT")
+                .HasColumnType("VARCHAR")
                 .HasMaxLength(20);
         }
     }

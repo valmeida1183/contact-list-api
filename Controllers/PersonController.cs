@@ -24,10 +24,9 @@ public class PersonController : ControllerBase
 
             return Ok(new ResultViewModel<IList<Person>>(persons));
         }
-        catch (SystemException ex)
+        catch (SystemException)
         {
-            return StatusCode(500, new ResultViewModel<IList<Person>>((ex.InnerException.Message)));
-            //return StatusCode(500, new ResultViewModel<IList<Person>>(("01EPerson - Não foi possível retornar a lista de pessoas")));
+            return StatusCode(500, new ResultViewModel<IList<Person>>(("01EPerson - Não foi possível retornar a lista de pessoas")));
         }
     }
 

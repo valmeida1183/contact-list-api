@@ -7,19 +7,19 @@ namespace ContactListApi.Data
 {
     public class AppDbContext : DbContext
     {
-        public string DbPath { get; }
+        //public string DbPath { get; }
 
         public DbSet<Person> Persons { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<ContactType> ContactTypes { get; set; }
 
-        public AppDbContext()
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            // var folder = System.IO.Directory.GetCurrentDirectory();
-            // DbPath = System.IO.Path.Join(folder, @"Data\contactListApi.db");
+            // // var folder = System.IO.Directory.GetCurrentDirectory();
+            // // DbPath = System.IO.Path.Join(folder, @"Data\contactListApi.db");
 
-            // var folder = System.IO.Directory.GetCurrentDirectory();
-            DbPath = @"Data\contactListApi.db";
+            // // var folder = System.IO.Directory.GetCurrentDirectory();
+            // DbPath = @"Data\contactListApi.db";
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace ContactListApi.Data
             );
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={DbPath};Cache=Shared");
+        // protected override void OnConfiguring(DbContextOptionsBuilder options)
+        //     => options.UseSqlite($"Data Source={DbPath};Cache=Shared");
     }
 }

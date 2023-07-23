@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using ContactListApi.Data;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContactListApi.Extensions;
 
@@ -36,6 +37,11 @@ public static class AppConfigurationExtension
 
     public static void ConfigureServices(this WebApplicationBuilder builder)
     {
-        builder.Services.AddDbContext<AppDbContext>();
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+        builder.Services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlite(connectionString);
+            });
     }
 }

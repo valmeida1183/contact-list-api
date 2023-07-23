@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using ContactListApi.ViewModels.Contact.Intefaces;
 
 namespace ContactListApi.ViewModels.Contact;
-public class SaveEmailContactViewModel : SavePersonContactsViewModel, ISaveContactViewModel
+public class SaveEmailContactViewModel : SaveContactsViewModel
 {
     [Required(ErrorMessage = "O email é obrigatório")]
     [EmailAddress(ErrorMessage = "O email é inválido")]
-    public string? Value { get; set; }
+    public override string? Value { get; set; }
 }

@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using ContactListApi.ViewModels.Contact.Intefaces;
 
 namespace ContactListApi.ViewModels.Contact;
-public class SavePhoneContactViewModel : SavePersonContactsViewModel, ISaveContactViewModel
+public class SavePhoneContactViewModel : SaveContactsViewModel
 {
     [Required(ErrorMessage = "O telefone é obrigatório")]
     [Phone(ErrorMessage = "O telefone inválido")]
-    public string? Value { get; set; }
+    public override string? Value { get; set; }
 }

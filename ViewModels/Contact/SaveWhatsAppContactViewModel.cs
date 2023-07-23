@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using ContactListApi.ViewModels.Contact.Intefaces;
 
 namespace ContactListApi.ViewModels.Contact;
-public class SaveWhatsAppContactViewModel : SavePersonContactsViewModel, ISaveContactViewModel
+public class SaveWhatsAppContactViewModel : SaveContactsViewModel
 {
     [Required(ErrorMessage = "O whatsApp é obrigatório")]
     [Phone(ErrorMessage = "O whatsApp inválido")]
-    public string? Value { get; set; }
+    public override string? Value { get; set; }
 }

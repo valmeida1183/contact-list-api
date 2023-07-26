@@ -44,5 +44,16 @@ public static class AppConfigurationExtension
             {
                 options.UseSqlServer(connectionString);
             });
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(
+                policy =>
+                {
+                    policy.AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowAnyOrigin();
+                });
+        });
     }
 }

@@ -11,6 +11,9 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseResponseCompression();
+app.UseCors();
 app.MapControllers();
 
 app.Run();
+
+//dotnet run --launch-profile https 

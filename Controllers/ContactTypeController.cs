@@ -10,7 +10,7 @@ namespace ContactListApi.Controllers;
 [Route("v1")]
 public class ContactTypeController : ControllerBase
 {
-    [HttpGet("contactTypes")]
+    [HttpGet("contact-types")]
     public async Task<IActionResult> GetAllAsync([FromServices] AppDbContext context)
     {
         try
